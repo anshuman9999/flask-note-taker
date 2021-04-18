@@ -23,7 +23,7 @@ const Navbar = () => {
                             to="/dashboard"
                             style={{ transform: "scale(1.5)" }}
                         >
-                            Auth App
+                            Note IT
                         </Button>
                     </Typography>
 

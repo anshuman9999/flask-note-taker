@@ -17,6 +17,8 @@ load_dotenv(dotenv_path=dotenv_path)
 
 jwt_secret = os.environ.get("JWT_SECRET_KEY")
 app_secret = os.environ.get("SECRET_KEY")
+DB = os.environ.get("DB")
+DB_PASS = os.environ.get("DB_PASS")
 
 app = Flask(__name__)
 
@@ -34,9 +36,10 @@ app.config["JWT_COOKIE_CSRF_PROTECT"] = False
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 
+host = DB.replace("<password>", DB_PASS)
 
 app.config['MONGODB_SETTINGS'] = {
-    'host': 'mongodb://localhost/movie-bag'
+    'host': host
 }
 
 initialize_db(app)
