@@ -20,7 +20,7 @@ app_secret = os.environ.get("SECRET_KEY")
 DB = os.environ.get("DB")
 DB_PASS = os.environ.get("DB_PASS")
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='client/build', static_url_path='')
 
 # cors = CORS(app)
 # app.config['CORS_HEADERS'] = 'Content-Type'
@@ -43,6 +43,10 @@ app.config['MONGODB_SETTINGS'] = {
 }
 
 initialize_db(app)
+
+@app.route('/')
+def root():
+    return app.send_static_file('index.html')
 
 @app.route("/api/getcsrf", methods=["GET"])
 def get_csrf():
