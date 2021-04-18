@@ -48,6 +48,10 @@ initialize_db(app)
 def root():
     return app.send_static_file('index.html')
 
+@app.errorhandler(404)
+def not_found(e):
+    return app.send_static_file('index.html')
+
 @app.route("/api/getcsrf", methods=["GET"])
 def get_csrf():
     token = generate_csrf()
