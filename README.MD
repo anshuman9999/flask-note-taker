@@ -8,12 +8,12 @@ Technologies used:
 4. Material UI
 
 ## Installing:
-Clone from GitHub: https://github.com/ashishpapanai/stockDL
+Clone from GitHub: https://github.com/anshuman9999/flask-note-taker
 
 ## Backend
 
 ```sh 
-git clone https://github.com/ashishpapanai/stockDL
+git clone https://github.com/anshuman9999/flask-note-taker
 ```
 Create a virtual environment using pip for Linux and macOS:
 ```sh
